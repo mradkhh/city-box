@@ -1,31 +1,25 @@
 // Colors
 :root {
-  --brand: #0156FF;
-  --brandDark: #0245c9;
-  --dark-blue: #272560;
-  --dark: #020203;
+  // =------------ COLORS --------------=
   --white: #ffffff;
   --black: #000000;
-  --light-blue: #F5F7FF;
-  --light-blue-darker: #cbcff8;
-  --orange: #FFB800;
-  --dark-cyan: #01A4FF;
-  --gray: #A2A6B0;
-  --dark-gray: #666666;
-  --light-gray: #CACDD8;
-  --red: #C94D3F;
-  --green: #78A962;
+  --orange-200: #FFF0E8;
+  --orange-500: #EA7530;
+  --orange-700: #e86e26;
+  --gray-200: #F7F7F7;
+  --gray-300: #E5E5E5;
+  --gray-500: #898989;
+  --gray-700: #2C3137;
+  --gray-800: #222529;
 
-  // gradient
-  --footer-gradient: radial-gradient(50% 50% at 50% 50%, #242528 0%, #040404 100%);
-  --blue-gradient: linear-gradient(180deg, #0074BE 0%, #005EAD 50.52%, #003189 100%);
+  // blur colors
+  --gray-blur-200: rgba(255, 255, 255, 0.2);
+  --gray-blur-300: rgba(255, 255, 255, 0.3);
 
-  // shadows
-  --shadow: 0px 5px 15px rgba(0, 0, 0, 0.14);
-  --card-shadow: 0px 5px 15px rgba(0, 0, 0, 0.14);
+  // shadow
+  --box-shadow: 2px 6px 20px rgba(22, 22, 22, 0.04);
 
-  // others
-  --transitionDuraction: 200ms;
 
-  --font-main: 'Poppins';
+  // =--------------- FONT -----------------=
+  --font-main: 'Gilroy';
 }

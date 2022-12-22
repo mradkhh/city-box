@@ -1,0 +1,90 @@
+@import "src/styles/mixins";
+
+.card {
+  position: relative;
+  @include maxWidth(460);
+  border-radius: 14px;
+  overflow: hidden;
+  background-color: var(--white);
+
+}
+
+.image {
+
+  > span {
+    position: absolute;
+    inset: 16px 16px auto auto;
+    @include flex-center;
+    padding: 12px;
+    border-radius: 100%;
+    background-color: var(--gray-blur-200);
+    z-index: 12;
+    cursor: pointer;
+  }
+}
+
+.body {
+  padding: 24px;
+
+  > p {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    margin-bottom: 20px;
+  }
+
+  > button {
+    width: 100%;
+  }
+}
+
+.body_top {
+  @include flex-between(center);
+  margin-bottom: 30px;
+
+  > h2 {
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 33px;
+  }
+
+  > div {
+    @include maxWidth(187);
+    @include flex-end(center);
+    gap: 6px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 150%;
+    color: var(--gray-800);
+
+    > span {
+      border-radius: 100%;
+      background-color: var(--gray-300);
+      @include flex-center;
+      padding: 10px;
+    }
+  }
+}
+
+.body__middle {
+  margin-bottom: 27px;
+  > ul {
+    @include grid(2, 2, 1, 1, 1);
+
+    > li {
+      @include flex-start(center);
+      gap: 8px;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 19px;
+
+      > span {
+        @include makeRectangle(8);
+        @include flex-center;
+        background-color: var(--orange-500);
+        color: transparent;
+        border-radius: 100%;
+      }
+    }
+  }
+}

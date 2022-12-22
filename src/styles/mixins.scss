@@ -1,40 +1,11 @@
 @use 'sass:math';
 
 // =---------------- CONTAINER ------------------=
-$containerWidth: 1400;
-$containerPadding: 40;
-$containerSidePadding: math.div($containerPadding, 2);
 $breakpoint1450: 1449.98 + px;
 $breakpoint992: 991.98 + px;
 $breakpoint768: 767.98 + px;
 $breakpoint568: 567.98 + px;
 $breakpoint480: 479.98 + px;
-
-@mixin container {
-  max-width: ($containerWidth + $containerPadding) + px !important;
-  width: 100% !important;
-  margin-inline: auto !important;
-  padding-inline: $containerSidePadding + px !important;
-
-  @media (max-width: $breakpoint1450) {
-    max-width: 1200px;
-  }
-  @media (max-width: $breakpoint992) {
-    max-width: 960px;
-    padding-inline: 25px;
-  }
-  @media (max-width: $breakpoint768) {
-    max-width: 740px;
-    padding-inline: 20px;
-  }
-  @media (max-width: $breakpoint568) {
-    max-width: none;
-    padding-inline: 8px !important;
-  }
-}
-
-
-
 
 // ------------------ flex -------------------
 
@@ -101,22 +72,25 @@ $breakpoint480: 479.98 + px;
 
 // ------------------ grid ---------------------
 
-@mixin grid($repeat) {
+@mixin grid($b1450, $b992, $b768, $b568, $b480  ) {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat($b1450, 1fr);
   gap: 18px;
 
   @media (max-width: $breakpoint1450) {
-    grid-template-columns: repeat($repeat, 1fr);
+    grid-template-columns: repeat($b1450, 1fr);
   }
   @media (max-width: $breakpoint992) {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat($b992, 1fr);
   }
   @media (max-width: $breakpoint768) {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat($b768, 1fr);
   }
   @media (max-width: $breakpoint568) {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat($b568, 1fr);
+  }
+  @media (max-width: $breakpoint480) {
+    grid-template-columns: repeat($b480, 1fr);
   }
 }
 

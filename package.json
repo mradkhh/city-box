@@ -1,5 +1,5 @@
 {
-  "name": "nextjs_app_template",
+  "name": "citybox",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,13 +9,14 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "axios": "^0.27.2",
+    "@types/swiper": "^6.0.0",
+    "antd": "^5.1.0",
     "next": "12.2.2",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "swiper": "^8.4.5"
   },
   "devDependencies": {
-    "@types/axios": "^0.14.0",
     "@types/node": "18.0.3",
     "@types/react": "18.0.15",
     "@types/react-dom": "18.0.6",

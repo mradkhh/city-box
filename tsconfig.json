@@ -18,6 +18,7 @@
     "paths": {
       "components/*": ["components/*"],
       "containers/*": ["containers/*"],
+      "screens/*": ["screens/*"],
       "static/*": ["static/*"],
       "styles/*": ["styles/*"],
       "layouts/*": ["layouts/*"],

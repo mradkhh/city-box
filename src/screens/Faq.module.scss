@@ -1,0 +1,108 @@
+@import "src/styles/mixins";
+
+.faqCard {
+  @include maxWidth(768);
+  margin-inline: auto;
+  background: var(--white);
+  border: 1px solid var(--white);
+  padding: 27px 0 17px 0;
+  box-sizing: border-box;
+  width: 100%;
+  margin-top: 16px;
+  border-bottom: 1px solid var(--gray-300);
+
+
+  @media only screen and (max-width: 768px) {
+    padding: 16px 16px 6px 16px;
+  }
+
+  & >div {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding-bottom: 10px;
+    cursor: pointer;
+
+    h4 {
+    max-width: calc(100% - 34px);
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 24px;
+
+      @media only screen and (max-width: 768px) {
+        font-size: 16px;
+      }
+    }
+
+    div {
+      position: relative;
+      width: 26px;
+      height: 26px;
+      @include flex-center;
+      background: var(--white);
+      border: 2px solid var(--orange-500);
+      border-radius: 50%;
+      cursor: pointer;
+
+      @media only screen and (max-width: 768px) {
+        width: 20px;
+        height: 20px;
+      }
+
+      span {
+        position: absolute;
+        width: 12px;
+        height: 2px;
+        border-radius: 1px;
+        background-color: var(--orange-500);
+        @include flex-center;
+
+        @media only screen and (max-width: 768px) {
+          width: 8px;
+          height: 2px;
+        }
+
+        &::before {
+          content: "";
+          position: absolute;
+          width: 12px;
+          height: 2px;
+          background-color: var(--orange-500);
+          transform: rotate(90deg);
+          //border-radius: 1px;
+          @include flex-center;
+          overflow: hidden;
+          transition: all ease 0.3s;
+
+          @media only screen and (max-width: 768px) {
+            width: 8px;
+            height: 2px;
+          }
+        }
+      }
+    }
+  }
+
+  p {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 150%;
+    max-width: calc(100% - 34px);
+    color: var(--gray-500);
+
+    @media only screen and (max-width: 768px) {
+      font-size: 16px;
+    }
+  }
+}
+
+.active {
+  span {
+    &::before {
+      transform: rotate(90deg) scaleX(0) !important;
+    }
+  }
+}

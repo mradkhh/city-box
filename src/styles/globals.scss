@@ -1,23 +1,103 @@
-.layout {
-  max-width: 1336px;
-  width: 90%;
-  margin-left: auto;
-  margin-right: auto;
+@use 'sass:math';
+
+*, *:after, *:before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-@media (max-width: 767.98px) {
-  .layout {
-    width: 96%;
-  }
+html {
+  scroll-behavior: smooth;
 }
-@media (max-width: 566.98px) {
-  .layout {
-    width: 98%;
+
+body {
+  font-family: var(--font-main), sans-serif;
+  background-color: var(--white);
+}
+
+a {
+  text-decoration: none;
+  color: var(--black);
+  transition: color 250ms ease;
+}
+
+ul, ol, dl {
+  list-style: none;
+}
+
+h1,h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-family: 'RoadRadio';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 60px;
+  line-height: 136%;
+  color: var(--white);
+}
+
+h2 {
+  font-family: 'RoadRadio';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 50px;
+  line-height: 136%;
+  color: var(--gray-800);
+}
+
+.btn {
+  background-color: var(--orange-500);
+  color: var(--white);
+  border-radius: 8px;
+  padding: 20px 30px;
+  border: 1px solid var(--orange-500);
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+
+  &:hover {
+    background-color: var(--orange-700);
   }
 }
 
-nav ul {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+
+// =---------------- CONTAINER ------------------=
+$containerWidth: 1400;
+$containerPadding: 40;
+$containerSidePadding: math.div($containerPadding, 2);
+$breakpoint1450: 1449.98 + px;
+$breakpoint992: 991.98 + px;
+$breakpoint768: 767.98 + px;
+$breakpoint568: 567.98 + px;
+$breakpoint480: 479.98 + px;
+
+.container {
+  max-width: ($containerWidth + $containerPadding) + px !important;
+  width: 100% !important;
+  margin-inline: auto !important;
+  padding-inline: $containerSidePadding + px !important;
+
+  @media (max-width: $breakpoint1450) {
+    max-width: 1200px;
+  }
+  @media (max-width: $breakpoint992) {
+    max-width: 960px;
+    padding-inline: 25px;
+  }
+  @media (max-width: $breakpoint768) {
+    max-width: 740px;
+    padding-inline: 20px;
+  }
+  @media (max-width: $breakpoint568) {
+    max-width: none;
+    padding-inline: 8px !important;
+  }
+}
+
+.text-center {
+  text-align: center;
 }
