@@ -58,7 +58,7 @@ const ContactUs: FC<ContactUsProps> = ({  }) => {
                             <input type="text" name="name" placeholder={"+998 99 989 88  99"}/>
 
                             <label htmlFor="message">Сообщение</label>
-                            <textarea name="message" id="message" cols="30" rows="10"/>
+                            <textarea name="message" id="message" cols={30} rows={10}/>
 
                             <Checkbox onChange={onChange}>
                                 <p className="checkbox-label">Вы соглашаетесь с политикой конфиденциальности.</p>
