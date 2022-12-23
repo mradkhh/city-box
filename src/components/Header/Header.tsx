@@ -22,11 +22,15 @@ const Header: FC = ({  }) => {
 
             let scroll = this.scrollY;
             if(scroll > 60) {
+                // @ts-ignore
                 header.style.backgroundColor = 'var(--menu-blur)';
+                // @ts-ignore
                 header.style.backdropFilter = 'blur(8px)';
                 return;
             } else if (scroll < 30) {
+                // @ts-ignore
                 header.style.backgroundColor = 'transparent';
+                // @ts-ignore
                 header.style.backdropFilter = 'none';
                 return;
             }
