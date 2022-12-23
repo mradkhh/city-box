@@ -4,6 +4,58 @@
 @import "globals";
 
 // =------------- HERO SECTION ---------------=
+
+//burger menu
+.ant-modal-wrap {
+  width: 100vw !important;
+  height: 100vh !important;
+  background-color: var(--menu-blur);
+  backdrop-filter: blur(8px);
+  overflow: hidden !important;
+}
+
+.ant-modal-content {
+  margin-inline: auto;
+  max-width: max-content;
+  margin-top: 15vh;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+
+.ant-modal-close-btn {
+  @include flex-center;
+  position: absolute;
+  top: -23vh;
+  right: -25vw;
+  cursor: pointer;
+}
+
+.ant-modal-close {
+  display: none;
+}
+
+.ant-modal-footer {
+  display: none;
+}
+
+.menu-nav {
+  text-align: center;
+
+  &-list {
+    > li {
+      font-weight: 500;
+      font-size: 36px;
+      line-height: 44px;
+      color: var(--white);
+      margin-bottom: 28px;
+      cursor: pointer;
+    }
+
+  }
+}
+
+
 #header {
   background-color: transparent;
   position: fixed;
@@ -13,7 +65,7 @@
 
 .header {
   @include flex-between(center);
-  padding-block: 45px;
+  padding-block: 32px;
 
   &__left {
     @include flex-end(center);
@@ -126,6 +178,10 @@
 
   }
 
+  &-select {
+    margin-bottom: 20px;
+  }
+
 
   &__info {
     position: absolute;
@@ -137,11 +193,14 @@
   color: var(--orange-500);
   width: 170px !important;
 
+
   &-selector {
     border: 1px solid var(--orange-500) !important;
     height: 64px !important;
     padding: 0 !important;
     box-shadow: none;
+    background-color: var(--bg-color) !important;
+    outline: none;
   }
 
   &-selection-item {
@@ -152,6 +211,7 @@
     line-height: 1.1 !important;
     padding: 18px !important;
     max-width: 150px !important;
+    outline: none;
   }
 
   &-arrow {
@@ -402,6 +462,7 @@
 
 .faq {
   margin-bottom: 140px;
+
   > h2 {
     margin-bottom: 64px;
   }
@@ -483,6 +544,106 @@
   }
 }
 
+// =----------------- CONTACT US --------------=
+.contactus {
+  margin-bottom: 140px;
+  > h2 {
+    margin-bottom: 48px;
+  }
+
+  &-content {
+    @include flex-between(center);
+    background: #FFFFFF;
+    border: 1px solid var(--gray-200);
+    border-radius: 16px;
+    overflow: hidden;
+  }
+
+  &-info {
+    @include flex-start(flex-start);
+    gap: 32px;
+    @include maxWidth(464);
+    flex-direction: column;
+    background-color: var(--gray-800);
+    padding: 110px 48px;
+
+    &-item {
+      @include flex-start(flex-start);
+      gap: 20px;
+
+      > span  {
+        @include flex-center;
+        margin-top: 16px;
+        padding: 15px;
+        border-radius: 100%;
+        background-color: var(--orange-200);
+      }
+
+      > div {
+        padding: 16px 37px 16px 0;
+        > h4 {
+          font-weight: 600;
+          font-size: 20px;
+          line-height: 24px;
+          color: var(--white);
+          margin-bottom: 8px;
+        }
+
+        > p {
+          font-weight: 500;
+          font-size: 16px;
+          line-height: 130%;
+          color: var(--gray-200);
+          margin-bottom: 14px;
+        }
+
+        > h6 {
+          font-weight: 500;
+          font-size: 16px;
+          line-height: 19px;
+          color: var(--orange-500);
+        }
+      }
+    }
+  }
+}
+
+#form {
+  padding: 96px 98px;
+
+  > button {
+    width: 100%;
+    margin-top: 32px;
+  }
+}
+
+.checkbox-label {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: var(--gray-500);
+}
+
+.ant-checkbox-checked .ant-checkbox-inner {
+  background-color: var(--orange-500) !important;
+  border-color: var(--orange-500) !important;
+}
+
+.ant-checkbox-wrapper:hover .ant-checkbox-inner,
+.ant-checkbox:hover .ant-checkbox-inner,
+.ant-checkbox-input:focus+.ant-checkbox-inner,
+.ant-checkbox-checked:hover {
+  border-color: var(--orange-500) !important;
+}
+
+.ant-checkbox-indeterminate .ant-checkbox-inner::after {
+  background-color: var(--orange-500);
+}
+
+:where(.css-dev-only-do-not-override-9ntgx0).ant-checkbox-checked:after {
+  border: 2px solid var(--orange-500) !important;
+}
+
 // =--------------- FOOTER ---------------=
 
 #footer {
@@ -507,9 +668,50 @@
   }
 
   &-nav {
+    width: 100%;
     @include flex-between(flex-start);
     gap: 32px;
+
+    &-item {
+      > h6 {
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 17px;
+        margin-bottom: 16px;
+      }
+
+      a {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 24px;
+        margin-bottom: 12px;
+        color: var(--gray-200);
+      }
+    }
   }
 }
 
+#copyright {
+  background-color: var(--gray-700);
+}
+
+.copyright {
+  @include flex-between(center);
+  background-color: var(--gray-700);
+  padding-block: 48px;
+
+  > h5 {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    color: var(--white);
+  }
+  &-socially {
+
+    > ul {
+      @include flex-end(center);
+      gap: 24px;
+    }
+  }
+}
 

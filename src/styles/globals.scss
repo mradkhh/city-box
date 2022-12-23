@@ -12,7 +12,7 @@ html {
 
 body {
   font-family: var(--font-main), sans-serif;
-  background-color: var(--white);
+  background-color: var(--bg-color);
 }
 
 a {
@@ -64,10 +64,40 @@ h2 {
   }
 }
 
+textarea {
+  height: 132px;
+}
+
+input, textarea {
+  background: #FFFFFF;
+  border: 1px solid #E5E5E5;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  color: var(--gray-800);
+  margin-bottom: 24px;
+  margin-top: 6px;
+  width: 100%;
+  padding: 14px 16px;
+  outline: none;
+  &::placeholder {
+    color: var(--gray-500);
+  }
+}
+
+label {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 17px;
+  color: var(--gray-800);
+  margin-bottom: 6px;
+}
+
 
 // =---------------- CONTAINER ------------------=
-$containerWidth: 1400;
-$containerPadding: 40;
+$containerWidth: 1140;
+$containerPadding: 300;
 $containerSidePadding: math.div($containerPadding, 2);
 $breakpoint1450: 1449.98 + px;
 $breakpoint992: 991.98 + px;

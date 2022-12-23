@@ -1,6 +1,7 @@
 // Colors
 :root {
   // =------------ COLORS --------------=
+  --bg-color: #FCFCFC;
   --white: #ffffff;
   --black: #000000;
   --orange-200: #FFF0E8;
@@ -15,9 +16,13 @@
   // blur colors
   --gray-blur-200: rgba(255, 255, 255, 0.2);
   --gray-blur-300: rgba(255, 255, 255, 0.3);
+  --menu-blur: rgba(6, 6, 6, 0.8);
 
   // shadow
   --box-shadow: 2px 6px 20px rgba(22, 22, 22, 0.04);
+
+  // lib change
+  --swiper-theme-color: var(--orange-500) !important;
 
 
   // =--------------- FONT -----------------=

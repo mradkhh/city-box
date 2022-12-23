@@ -1,5 +1,5 @@
 import React, {FC} from 'react';
-import {BrandLogo} from "static/icons/icon";
+import {BrandLogo, FacebookIcon, LinkedinIcon, TwitterIcon} from "static/icons/icon";
 import Link from "next/link";
 
 interface FooterProps {
@@ -150,6 +150,34 @@ const Footer: FC<FooterProps> = ({  }) => {
                                 <li>
                                     <Link href={'/'}>
                                         <a>Настройки</a>
+                                    </Link>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="copyright">
+                <div className="container">
+                    <div className="copyright">
+                        <h5 >
+                            © Все права защищены.
+                        </h5>
+                        <div className="copyright-socially">
+                            <ul>
+                                <li>
+                                    <Link href={'/'}>
+                                        <a><TwitterIcon/></a>
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link href={'/'}>
+                                        <a><LinkedinIcon/></a>
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link href={'/'}>
+                                        <a><FacebookIcon/></a>
                                     </Link>
                                 </li>
                             </ul>
