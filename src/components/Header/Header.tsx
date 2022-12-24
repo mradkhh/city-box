@@ -8,6 +8,8 @@ const Header: FC = ({  }) => {
 
     const [isModalOpen, setIsModalOpen] = useState(false);
 
+
+    // =-------------- BURGER MENU function -----------------=
     const showModal = () => {
         setIsModalOpen(true);
     };
@@ -16,6 +18,7 @@ const Header: FC = ({  }) => {
         setIsModalOpen(false);
     };
 
+    // =----------- HEADER background effect ------------------=
     useEffect(() => {
         const header = document.getElementById('header');
         window.addEventListener('scroll', function(e) {
@@ -58,15 +61,17 @@ const Header: FC = ({  }) => {
                         <a><BrandLogo/></a>
                     </Link>
                     <div className={'header__left'}>
-                        <Link href={'/'}>
-                            <a><InstagramIcon/></a>
-                        </Link>
-                        <Link href={'/'}>
-                            <a><TelegramIcon/></a>
-                        </Link>
-                        <Link href={'/'}>
-                            <a><PhoneIcon/></a>
-                        </Link>
+                        <div className="header-socially">
+                            <Link href={'/'}>
+                                <a><InstagramIcon/></a>
+                            </Link>
+                            <Link href={'/'}>
+                                <a><TelegramIcon/></a>
+                            </Link>
+                            <Link href={'/'}>
+                                <a><PhoneIcon/></a>
+                            </Link>
+                        </div>
                         <div className="header__left-number">
                             <h6>+998 99 099 78 77</h6>
                             <div> <span>.</span> Сейчас работаем</div>

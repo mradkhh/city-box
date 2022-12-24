@@ -2,6 +2,7 @@
 
 // =---------------- CONTAINER ------------------=
 $breakpoint1450: 1449.98 + px;
+$breakpoint1200: 1199.98 + px;
 $breakpoint992: 991.98 + px;
 $breakpoint768: 767.98 + px;
 $breakpoint568: 567.98 + px;
@@ -95,47 +96,6 @@ $breakpoint480: 479.98 + px;
 }
 
 
-// ---------------- other -----------------
-@mixin dropEffect($duration) {
-  position: absolute;
-  animation: fade-down $duration+ms ease;
-  top: 40px;
-  box-shadow: var(--shadow);
-  border-radius: 4px;
-  overflow: hidden;
-
-  @keyframes fade-down {
-    0% {
-      opacity: 0;
-      top: 0;
-    }
-    100% {
-      opacity: 1;
-      top: 40px;
-    }
-  }
-}
-
-@mixin dropEffectToUp($duration) {
-  position: absolute;
-  animation: fade-up $duration+ms ease;
-  top: 58px;
-  box-shadow: var(--shadow);
-  border-radius: 4px;
-  overflow: hidden;
-
-  @keyframes fade-up {
-    0% {
-      opacity: 0;
-      top: 100px;
-    }
-    100% {
-      opacity: 1;
-      top: 58px;
-    }
-  }
-}
-
 @mixin debugging {
   outline: 1px solid green !important;
   background-color: rgba(0, 128, 0, 0.1) !important;
@@ -179,6 +139,12 @@ $breakpoint480: 479.98 + px;
 
 @mixin breakpoint-max-992 {
   @media (max-width: $breakpoint992) {
+    @content
+  }
+}
+
+@mixin breakpoint-max-1200 {
+  @media (max-width: $breakpoint1200) {
     @content
   }
 }

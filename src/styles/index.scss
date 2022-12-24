@@ -67,15 +67,39 @@
   @include flex-between(center);
   padding-block: 32px;
 
-  &__left {
+  @include breakpoint-max-768 {
+    padding-block: 18px;
+  }
+
+  &-socially {
     @include flex-end(center);
     gap: 20px;
+
+    @include breakpoint-max-768 {
+      position: absolute;
+      top: 100px;
+      right: 20px;
+      flex-direction: column;
+    }
+
+    @include breakpoint-max-568 {
+      right: 16px;
+    }
+
     > a {
       @include flex-center;
       padding: 12px;
       background-color: var(--white);
       border-radius: 100%;
+      border: 1px solid var(--gray-300);
+      box-shadow: var(--box-shadow);
     }
+
+  }
+
+  &__left {
+    @include flex-end(center);
+    gap: 20px;
 
     &-number {
       @include flex-start(flex-start);
@@ -86,6 +110,11 @@
         font-size: 20px;
         line-height: 24px;
         margin-bottom: 6px;
+
+        @include breakpoint-max-568 {
+          font-size: 16px;
+          margin-bottom: 0;
+        }
       }
 
       > div {
@@ -94,6 +123,10 @@
         font-weight: 500;
         font-size: 16px;
         line-height: 19px;
+
+        @include breakpoint-max-568 {
+          font-size: 13px;
+        }
 
         > span {
           @include flex-center;
@@ -112,6 +145,10 @@
       padding: 12px;
       border-radius: 100%;
       background-color: var(--orange-500);
+
+      @include breakpoint-max-992 {
+        margin-left: 0;
+      }
     }
   }
 }
@@ -127,18 +164,49 @@
 .hero {
   @include flex-between(center);
 
+  @include breakpoint-max-1200 {
+    @include flex-start(center);
+    flex-direction: column;
+  }
+
   &__left {
     @include maxWidth(560);
+
+    @include breakpoint-max-1200 {
+      margin-right: auto;
+    }
+
+    > h1 {
+      @include breakpoint-max-768 {
+        font-size: 48px;
+      }
+
+      @include breakpoint-max-480 {
+        font-size: 36px;
+      }
+    }
   }
 
   &__right {
     @include maxWidth(500);
+
+    @include breakpoint-max-1200 {
+      margin-right: auto;
+    }
     > p {
       font-weight: 500;
       font-size: 20px;
       line-height: 145%;
       color: #FFFFFF;
       margin-bottom: 22px;
+
+      @include breakpoint-max-768 {
+          font-size: 16px;
+      }
+
+      @include breakpoint-max-480 {
+        font-size: 14px;
+      }
     }
 
     > button {
@@ -157,9 +225,12 @@
 .hero__image {
   width: 100%;
   height: 900px;
+  object-fit: cover;
 
   > img {
     width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 }
 
@@ -170,6 +241,10 @@
   &__top {
     @include flex-between(flex-end);
     margin-bottom: 48px;
+
+    @include breakpoint-max-480 {
+      flex-direction: column;
+    }
 
     > h2 {
       @include maxWidth(752);
@@ -186,6 +261,14 @@
   &__info {
     position: absolute;
     inset: 24px auto 24px 24px;
+
+    @include breakpoint-max-768 {
+      inset: 16px;
+    }
+
+    @include breakpoint-max-480 {
+      inset: 8px;
+    }
   }
 }
 
@@ -218,10 +301,6 @@
     inset-inline-end: 18px !important;
   }
 
-  &-drowdown {
-
-  }
-
   &-item-option {
     padding: 12px 30px !important;
     &-content {
@@ -251,6 +330,8 @@
   object-position: center;
   > img {
     width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 }
 
@@ -285,7 +366,7 @@
   }
 
   &__grid {
-    @include grid(4, 4, 3, 2, 1);
+    @include grid(4, 2, 2, 2, 1);
     gap: 24px;
 
     &-icon {
@@ -301,6 +382,7 @@
     &-item {
       @include maxWidth(267);
       padding: 20px 40px;
+      margin-inline: auto;
 
        h4 {
         text-align: center;
@@ -331,17 +413,33 @@
   }
 
   &-tabs {
-    @include grid(4, 4, 2, 1, 1);
+    @include grid(4, 4, 2, 2, 2);
     gap: 24px;
     margin-bottom: 87px;
+    @include breakpoint-max-768 {
+      gap: 16px;
+    }
   }
 
   &-content {
     @include flex-around(center);
+
+    @include breakpoint-max-568 {
+      flex-direction: column-reverse;
+    }
   }
 
   &-info {
     @include maxWidth(433);
+
+    @include breakpoint-max-768 {
+      @include maxWidth(300);
+    }
+
+    @include breakpoint-max-568 {
+      max-width: 100% !important;
+      margin-bottom: 45px;
+    }
 
     > div {
       @include flex-start(center);
@@ -357,6 +455,10 @@
         font-size: 26px;
         line-height: 31px;
         color: var(--black);
+
+        @include breakpoint-max-768 {
+          font-size: 24px;
+        }
       }
     }
 
@@ -366,6 +468,10 @@
       line-height: 150%;
       color: var(--gray-500);
       margin-bottom: 30px;
+
+      @include breakpoint-max-768 {
+        font-size: 16px;
+      }
     }
 
     > h6 {
@@ -373,6 +479,10 @@
       font-size: 26px;
       line-height: 31px;
       margin-bottom: 25px;
+
+      @include breakpoint-max-768 {
+        font-size: 18px;
+      }
     }
 
     > button {
@@ -390,14 +500,23 @@
   }
 
   &-grid {
-    @include grid(3, 3, 2, 1, 1);
+    @include grid(3, 2, 2, 1, 1);
     gap: 48px;
+    @include breakpoint-max-768 {
+      gap: 24px;
+    }
 
     &-item {
       padding: 16px;
+      margin-inline: auto;
       @include flex-start(flex-start);
-      gap: 20px;
       @include maxWidth(364);
+      gap: 20px;
+
+      @include breakpoint-max-768 {
+        gap: 16px;
+        padding: 12px;
+      }
 
       > span {
         border-radius: 100%;
@@ -434,6 +553,8 @@
 
   > img {
     width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 }
 
@@ -454,6 +575,9 @@
       line-height: 120%;
       color: var(--white);
       margin-bottom: 30px;
+      @include breakpoint-max-768 {
+        font-size: 22px;
+      }
     }
   }
 }
@@ -489,7 +613,6 @@
 }
 
 // =-------------- NEWS ----------------=
-
 .news {
   margin-bottom: 140px;
 
@@ -497,14 +620,19 @@
     margin-bottom: 48px;
   }
 
-  &-grid {
-    @include grid(3, 3, 2, 2, 1);
-    gap: 24px;
-
+  &-slide {
     &-item {
+      width: 100%;
+      max-width: 100%;
+      object-fit: cover;
       position: relative;
       border-radius: 14px;
       overflow: hidden;
+
+      img {
+        width: 100%;
+        object-fit: cover !important;
+      }
 
       > div {
         @include flex-start(center);
@@ -537,6 +665,11 @@
         color: var(--white);
         position: absolute;
         inset: auto 0 0 0;
+        @include line-clamp-vertical(2);
+
+        @include breakpoint-max-768 {
+          font-size: 20px;
+        }
       }
     }
 
@@ -557,6 +690,10 @@
     border: 1px solid var(--gray-200);
     border-radius: 16px;
     overflow: hidden;
+
+    @include breakpoint-max-992 {
+      flex-direction: column;
+    }
   }
 
   &-info {
@@ -566,10 +703,30 @@
     flex-direction: column;
     background-color: var(--gray-800);
     padding: 110px 48px;
+    min-width: max-content;
+
+    @include breakpoint-max-992 {
+      max-width: 100% !important;
+      padding: 48px;
+      min-width: 100%;
+    }
+
+    @include breakpoint-max-568 {
+      padding: 24px;
+    }
 
     &-item {
       @include flex-start(flex-start);
       gap: 20px;
+      @include maxWidth(368);
+
+      @include breakpoint-max-992 {
+        margin-inline: auto;
+      }
+
+      @include breakpoint-max-568 {
+        gap: 0;
+      }
 
       > span  {
         @include flex-center;
@@ -581,12 +738,20 @@
 
       > div {
         padding: 16px 37px 16px 0;
+
+        @include breakpoint-max-568 {
+          padding: 16px;
+        }
         > h4 {
           font-weight: 600;
           font-size: 20px;
           line-height: 24px;
           color: var(--white);
           margin-bottom: 8px;
+
+          @include breakpoint-max-568 {
+            font-size: 18px;
+          }
         }
 
         > p {
@@ -595,6 +760,10 @@
           line-height: 130%;
           color: var(--gray-200);
           margin-bottom: 14px;
+
+          @include breakpoint-max-568 {
+            font-size: 14px;
+          }
         }
 
         > h6 {
@@ -602,6 +771,10 @@
           font-size: 16px;
           line-height: 19px;
           color: var(--orange-500);
+
+          @include breakpoint-max-568 {
+            font-size: 15px;
+          }
         }
       }
     }
@@ -610,6 +783,14 @@
 
 #form {
   padding: 96px 98px;
+
+  @include breakpoint-max-1200 {
+    padding: 64px;
+  }
+
+  @include breakpoint-max-568 {
+    padding: 24px;
+  }
 
   > button {
     width: 100%;
@@ -622,6 +803,10 @@
   font-size: 16px;
   line-height: 19px;
   color: var(--gray-500);
+
+  @include breakpoint-max-568 {
+    font-size: 15px;
+  }
 }
 
 .ant-checkbox-checked .ant-checkbox-inner {
@@ -657,13 +842,25 @@
   gap: 64px;
   color: var(--gray-200);
 
+  @include breakpoint-max-1200 {
+    flex-direction: column;
+  }
+
   &-logo {
     @include maxWidth(320);
+    @include breakpoint-max-1200 {
+      margin-inline: auto;
+      text-align: center;
+    }
     > p {
       font-weight: 500;
       font-size: 16px;
       line-height: 24px;
       margin-top: 24px;
+
+      @include breakpoint-max-768 {
+        font-size: 15px;
+      }
     }
   }
 
@@ -672,12 +869,30 @@
     @include flex-between(flex-start);
     gap: 32px;
 
+    @include breakpoint-max-1200 {
+      justify-content: space-around;
+    }
+
+    @include breakpoint-max-568 {
+      flex-direction: column;
+    }
+
     &-item {
+      @include breakpoint-max-568 {
+        margin-inline: auto;
+        text-align: center;
+        margin-bottom: 30px;
+      }
       > h6 {
         font-weight: 600;
         font-size: 14px;
         line-height: 17px;
         margin-bottom: 16px;
+        color: var(--gray-500);
+
+        @include breakpoint-max-768 {
+          font-size: 13px;
+        }
       }
 
       a {
@@ -685,7 +900,16 @@
         font-size: 16px;
         line-height: 24px;
         margin-bottom: 12px;
-        color: var(--gray-200);
+        color: var(--gray-300);
+
+        @include breakpoint-max-768 {
+          font-size: 14px;
+        }
+
+        &:hover {
+          color: var(--gray-500);
+        }
+
       }
     }
   }
@@ -700,17 +924,35 @@
   background-color: var(--gray-700);
   padding-block: 48px;
 
+  @include breakpoint-max-568 {
+    flex-direction: column-reverse;
+  }
+
   > h5 {
     font-weight: 500;
     font-size: 16px;
     line-height: 24px;
     color: var(--white);
+
+    @include breakpoint-max-568 {
+      font-size: 15px;
+    }
   }
   &-socially {
+    @include breakpoint-max-568 {
+      margin-bottom: 24px;
+    }
 
     > ul {
       @include flex-end(center);
       gap: 24px;
+
+      li:hover {
+        svg path {
+          transition: all 300ms ease;
+          fill: var(--gray-500);
+        }
+      }
     }
   }
 }

@@ -1,4 +1,5 @@
 @use 'sass:math';
+@import "mixins";
 
 *, *:after, *:before {
   margin: 0;
@@ -46,6 +47,10 @@ h2 {
   font-size: 50px;
   line-height: 136%;
   color: var(--gray-800);
+
+  @include breakpoint-max-768 {
+    font-size: 36px;
+  }
 }
 
 .btn {
@@ -59,7 +64,12 @@ h2 {
   font-size: 20px;
   line-height: 24px;
 
+  @include breakpoint-max-768 {
+    font-size: 16px;
+  }
+
   &:hover {
+    transition: all 300ms ease;
     background-color: var(--orange-700);
   }
 }
@@ -84,6 +94,10 @@ input, textarea {
   &::placeholder {
     color: var(--gray-500);
   }
+
+  @include breakpoint-max-568 {
+    font-size: 15px;
+  }
 }
 
 label {
@@ -96,8 +110,8 @@ label {
 
 
 // =---------------- CONTAINER ------------------=
-$containerWidth: 1140;
-$containerPadding: 300;
+$containerWidth: 1200;
+$containerPadding: 60;
 $containerSidePadding: math.div($containerPadding, 2);
 $breakpoint1450: 1449.98 + px;
 $breakpoint992: 991.98 + px;
@@ -116,15 +130,15 @@ $breakpoint480: 479.98 + px;
   }
   @media (max-width: $breakpoint992) {
     max-width: 960px;
-    padding-inline: 25px;
+    padding-inline: 25px !important;
   }
   @media (max-width: $breakpoint768) {
     max-width: 740px;
-    padding-inline: 20px;
+    padding-inline: 20px !important;
   }
   @media (max-width: $breakpoint568) {
     max-width: none;
-    padding-inline: 8px !important;
+    padding-inline: 16px !important;
   }
 }
 

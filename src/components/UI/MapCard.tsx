@@ -21,6 +21,16 @@ const MapCard: FC<MapCardProps> = ({ name, location }) => {
                 <Swiper
                     spaceBetween={0}
                     slidesPerView={1}
+                    breakpoints={{
+                        320: {
+                            slidesPerView: 3,
+                            spaceBetween: 8,
+                        },
+                        768: {
+                            slidesPerView: 1,
+                            spaceBetween: 0,
+                        }
+                    }}
                     effect={'fade'}
                     modules={[Autoplay, Pagination]}
                     pagination={{clickable: true}}
