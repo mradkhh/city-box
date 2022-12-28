@@ -19,7 +19,7 @@ const Main = ({ children }: main) => {
     return (
         <>
             <Head>
-                <title>CityBox</title>
+                <title>Citybox - Склад во всех районах вашего города</title>
                 <meta property="og:title" content={'citybox'} />
                 <meta name="description" content={'citybox'} />
                 <meta name="keywords" content={'citybox'} />

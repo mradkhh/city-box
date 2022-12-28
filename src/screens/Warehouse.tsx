@@ -1,5 +1,6 @@
-import React, {FC} from 'react';
+import React, {FC, useState} from 'react';
 import { Select } from 'antd';
+import {YMaps, Map, Placemark} from '@pbe/react-yandex-maps';
 import {ArrowDownIcon} from "static/icons/icon";
 import MapCard from "components/UI/MapCard";
 
@@ -37,10 +38,17 @@ const select_options = [
 
 const Warehouse: FC<WarehouseProps> = ({  }) => {
 
+    const [ cardInfo, setCardInfo ] = useState<boolean>(true)
+
 
     function handleChange() {
         console.log('change')
     }
+
+    const defaultState = {
+        center: [55.751574, 37.573856],
+        zoom: 5,
+    };
 
     return (
         <section id="warehouse">
@@ -58,9 +66,18 @@ const Warehouse: FC<WarehouseProps> = ({  }) => {
                         </div>
                     </div>
                     <div className="warehouse__bottom">
-                        <img src="/images/map.png" alt="maps"/>
-                        <div className="warehouse__info">
+                        <YMaps>
+                            <Map
+                                defaultState={defaultState}
+                                width={"100%"}
+                                height={800}
+                            >
+                                <Placemark geometry={[55.684758, 37.738521]} />
+                            </Map>
+                        </YMaps>
+                        <div style={{ left: cardInfo ? '24px' : '-500px' }} className="warehouse__info">
                             <MapCard
+                                setCardInfo={setCardInfo}
                                 name={'м. Парнас'}
                                 location={"442 Labzak,  Юнусабад, Tashkent"}
                             />

@@ -8,6 +8,11 @@ const Header: FC = ({  }) => {
 
     const [isModalOpen, setIsModalOpen] = useState(false);
 
+// @ts-ignore
+const date = new Date()
+const isWeekend = (date.getDay() === 6) || (date.getDay()  === 0);
+const isFreeDay = ( date.getHours() >= 17 ) && (date.getHours() <= 8)
+    const isFreeTime = (isFreeDay || isWeekend)
 
     // =-------------- BURGER MENU function -----------------=
     const showModal = () => {
@@ -74,7 +79,9 @@ const Header: FC = ({  }) => {
                         </div>
                         <div className="header__left-number">
                             <h6>+998 99 099 78 77</h6>
-                            <div> <span>.</span> Сейчас работаем</div>
+                            <div> <span style={{backgroundColor: isFreeTime ? 'var(--red)' : 'var(--green)'}}>.</span> {
+                                isFreeTime ? "Сейчас неработаем" : "Сейчас работаем"
+                            }</div>
                         </div>
                         <div onClick={showModal} className="burger__menu">
                             <BurgerIcon/>

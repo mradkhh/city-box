@@ -10,11 +10,13 @@ import styles from './styles/mapcard.module.scss'
 
 interface MapCardProps {
     name: string,
-    location: string
+    location: string,
+    setCardInfo: (bool: boolean) => void
 }
 
 
-const MapCard: FC<MapCardProps> = ({ name, location }) => {
+const MapCard: FC<MapCardProps> = ({ name, location, setCardInfo }) => {
+
 
     const pagination = {
         clickable: true,
@@ -72,7 +74,7 @@ const MapCard: FC<MapCardProps> = ({ name, location }) => {
                         />
                     </SwiperSlide>
                 </Swiper>
-                <span>
+                <span onClick={() => setCardInfo(false)}>
                     <XIcon/>
                 </span>
             </div>
