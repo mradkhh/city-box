@@ -23,7 +23,7 @@ const Hero: FC = () => {
                     pagination={pagination}
                     lazy={true}
                     autoplay={{
-                        delay: 2000,
+                        delay: 3500,
                         disableOnInteraction: false
                     }}
                     loop
