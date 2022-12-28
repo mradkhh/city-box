@@ -53,6 +53,129 @@ h2 {
   }
 }
 
+.swiper-container {
+
+  &-hero {
+    .swiper-pagination {
+      width: max-content !important;
+      margin-inline: auto;
+      @include flex-center;
+      gap: 10px;
+      position: absolute;
+      z-index: 12;
+      bottom: 117px;
+      left: 56%;
+
+      @include breakpoint-max-1200 {
+        left: 30px;
+        bottom: 100px;
+      }
+
+      @include breakpoint-max-768 {
+        left: 20px;
+      }
+
+      &-bullet {
+        @include flex-center;
+        @include makeRectangle(8);
+        border-radius: 100vmax;
+        text-align: center;
+        color: transparent;
+        background-color: var(--gray-500);
+      }
+
+      &-bullet-active {
+        min-width: 29px !important;
+        height: 6px !important;
+        background-color: var(--white);
+      }
+    }
+  }
+
+  &-card {
+    .swiper-pagination {
+      width: max-content !important;
+      margin-inline: auto;
+      @include flex-center;
+      gap: 10px;
+      position: absolute;
+      bottom: 21px;
+      z-index: 12;
+      right: 50%;
+      transform: translateX(50%);
+
+      @include breakpoint-max-768 {
+        bottom: 12px;
+      }
+
+      &-bullet {
+        @include flex-center;
+        @include makeRectangle(8);
+        border-radius: 100vmax;
+        text-align: center;
+        color: transparent;
+        background-color: var(--gray-500);
+      }
+
+      &-bullet-active {
+        min-width: 29px !important;
+        height: 6px !important;
+        background-color: var(--white);
+      }
+    }
+  }
+
+  &-gallery {
+    .swiper-slide {
+
+      &-prev,
+      &-next {
+        @include breakpoint-min-992 {
+          opacity: .3;
+          height: 600px;
+          overflow: hidden;
+          margin-block: auto;
+          border-radius: 16px;
+        }
+      }
+    }
+
+  }
+}
+
+.swiper-btn {
+  @include flex-center;
+  @include makeRectangle(60);
+  border-radius: 100vmax;
+  background-color: var(--gray-800);
+  cursor: pointer;
+  &-prev {
+    position: absolute;
+    left: 24%;
+    top: 50%;
+    z-index: 12;
+    transform: translateY(-50%);
+
+    @include breakpoint-max-992 {
+      left: 8px;
+    }
+  }
+
+  &-next {
+    position: absolute;
+    right: 24%;
+    top: 50%;
+    z-index: 12;
+    transform: translateY(-50%);
+
+    @include breakpoint-max-992 {
+      right: 8px;
+    }
+  }
+}
+
+
+
 .btn {
   background-color: var(--orange-500);
   color: var(--white);

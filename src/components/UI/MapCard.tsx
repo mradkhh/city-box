@@ -15,6 +15,12 @@ interface MapCardProps {
 
 
 const MapCard: FC<MapCardProps> = ({ name, location }) => {
+
+    const pagination = {
+        clickable: true,
+        dynamicBullets: true,
+    };
+
     return (
         <div className={styles.card}>
             <div className={styles.image}>
@@ -31,16 +37,15 @@ const MapCard: FC<MapCardProps> = ({ name, location }) => {
                             spaceBetween: 0,
                         }
                     }}
-                    effect={'fade'}
                     modules={[Autoplay, Pagination]}
-                    pagination={{clickable: true}}
+                    pagination={pagination}
                     autoplay={{
-                        delay: 1000,
+                        delay: 1500,
                         pauseOnMouseEnter: true,
                         disableOnInteraction: false
                     }}
                     loop
-                    className='swiper-container'
+                    className='swiper-container-card'
                 >
                     <SwiperSlide>
                         <Image
@@ -67,7 +72,6 @@ const MapCard: FC<MapCardProps> = ({ name, location }) => {
                         />
                     </SwiperSlide>
                 </Swiper>
-                <div className="swiper-pagination swiper-pagination-black"></div>
                 <span>
                     <XIcon/>
                 </span>

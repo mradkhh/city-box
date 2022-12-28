@@ -29,6 +29,18 @@
   top: -23vh;
   right: -25vw;
   cursor: pointer;
+
+  @include breakpoint-max-768 {
+    right: -24vw;
+  }
+
+  @include breakpoint-max-568 {
+    right: -20vw;
+  }
+
+  @include breakpoint-max-480 {
+    right: -18vw;
+  }
 }
 
 .ant-modal-close {
@@ -50,6 +62,10 @@
       color: var(--white);
       margin-bottom: 28px;
       cursor: pointer;
+
+      @include breakpoint-max-768 {
+        font-size: 28px;
+      }
     }
 
   }
@@ -603,12 +619,16 @@
 .gallery {
   margin-bottom: 140px;
   &-img-wrapper {
-    @include maxWidth(946);
     margin-inline: auto;
     height: 700px;
     border-radius: 16px;
     overflow: hidden;
     object-fit: cover;
+
+    @include breakpoint-max-992 {
+      height: 450px;
+      margin-inline: 24px;
+    }
   }
 }
 

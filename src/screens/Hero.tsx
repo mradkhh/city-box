@@ -5,6 +5,14 @@ import 'swiper/css';
 
 
 const Hero: FC = () => {
+
+
+    const pagination = {
+        clickable: true,
+        dynamicBullets: true,
+    };
+
+
     return (
         <section id="hero" className="hero__section">
             <div>
@@ -12,15 +20,19 @@ const Hero: FC = () => {
                     spaceBetween={0}
                     slidesPerView={1}
                     modules={[Autoplay, Pagination]}
-                    pagination={{clickable: true}}
+                    pagination={pagination}
                     autoplay={{
                         delay: 2000,
-                        pauseOnMouseEnter: true,
                         disableOnInteraction: false
                     }}
                     loop
-                    className='swiper-container'
+                    className='swiper-container-hero'
                 >
+                    <SwiperSlide>
+                        <div className="hero__image">
+                            <img src={'/images/hero.jpg'} alt="hero"/>
+                        </div>
+                    </SwiperSlide>
                     <SwiperSlide>
                         <div className="hero__image">
                             <img src={'/images/hero.jpg'} alt="hero"/>
