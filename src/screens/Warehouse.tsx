@@ -1,8 +1,9 @@
 import React, {FC, useState} from 'react';
 import { Select } from 'antd';
 import {YMaps, Map, Placemark} from '@pbe/react-yandex-maps';
-import {ArrowDownIcon} from "static/icons/icon";
+import {ArrowDownIcon, MapIcon} from "static/icons/icon";
 import MapCard from "components/UI/MapCard";
+import placemarkIcon from '../../public/placemark.png'
 
 interface WarehouseProps {
 
@@ -72,7 +73,9 @@ const Warehouse: FC<WarehouseProps> = ({  }) => {
                                 width={"100%"}
                                 height={800}
                             >
-                                <Placemark geometry={[55.684758, 37.738521]} />
+                                <Placemark
+                                    geometry={[55.684758, 37.738521]}
+                                />
                             </Map>
                         </YMaps>
                         <div style={{ left: cardInfo ? '24px' : '-500px' }} className="warehouse__info">

@@ -63,6 +63,11 @@
       margin-bottom: 28px;
       cursor: pointer;
 
+      &:hover {
+        transition: all 250ms;
+        color: var(--orange-500);
+      }
+
       @include breakpoint-max-768 {
         font-size: 28px;
       }
