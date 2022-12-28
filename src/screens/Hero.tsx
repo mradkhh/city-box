@@ -31,22 +31,22 @@ const Hero: FC = () => {
                 >
                     <SwiperSlide>
                         <div className="hero__image">
-                            <img src={'/images/hero.jpg'} alt="hero"/>
+                            <img width={"100%"} src={'/images/hero.jpg'} alt="hero"/>
                         </div>
                     </SwiperSlide>
                     <SwiperSlide>
                         <div className="hero__image">
-                            <img src={'/images/hero.jpg'} alt="hero"/>
+                            <img width={"100%"} src={'/images/hero.jpg'} alt="hero"/>
                         </div>
                     </SwiperSlide>
                     <SwiperSlide>
                         <div className="hero__image">
-                            <img src={'/images/hero.jpg'} alt="hero"/>
+                            <img width={"100%"} src={'/images/hero.jpg'} alt="hero"/>
                         </div>
                     </SwiperSlide>
                     <SwiperSlide>
                         <div className="hero__image">
-                            <img src={'/images/hero.jpg'} alt="hero"/>
+                            <img width={"100%"} src={'/images/hero.jpg'} alt="hero"/>
                         </div>
                     </SwiperSlide>
                 </Swiper>
