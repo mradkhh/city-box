@@ -11,8 +11,8 @@ const Header: FC = ({  }) => {
 // @ts-ignore
 const date = new Date()
 const isWeekend = (date.getDay() === 6) || (date.getDay()  === 0);
-const isFreeDay = ( date.getHours() >= 17 ) && (date.getHours() <= 8)
-    const isFreeTime = (isFreeDay || isWeekend)
+const isFreeDay = ( date.getHours() < 17 ) && (date.getHours() >= 8)
+    const isFreeTime = (!isFreeDay || isWeekend)
 
     // =-------------- BURGER MENU function -----------------=
     const showModal = () => {
