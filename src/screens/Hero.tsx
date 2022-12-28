@@ -1,5 +1,5 @@
 import React, {FC} from 'react';
-import { Autoplay, Pagination } from 'swiper';
+import { Autoplay, Pagination, Lazy } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 
@@ -19,8 +19,9 @@ const Hero: FC = () => {
                 <Swiper
                     spaceBetween={0}
                     slidesPerView={1}
-                    modules={[Autoplay, Pagination]}
+                    modules={[Autoplay, Pagination, Lazy]}
                     pagination={pagination}
+                    lazy={true}
                     autoplay={{
                         delay: 2000,
                         disableOnInteraction: false
