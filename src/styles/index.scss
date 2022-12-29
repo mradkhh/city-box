@@ -350,6 +350,7 @@
   border-radius: 16px;
   object-fit: contain;
   object-position: center;
+  box-shadow: inset var(--box-shadow);
 
   > div:first-child {
     width: 100% !important;

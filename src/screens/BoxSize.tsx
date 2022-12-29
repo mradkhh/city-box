@@ -21,35 +21,35 @@ const Tab: FC<TabProps> = ({ setTab, id, tab, text }) => {
                     color: tab === id ? 'var(--orange-500)' : 'var(--gray-500)'
                 }}
                 onClick={handleClick} className="tab-wrapper">
-        { text }
+        { text } <sup>2</sup>
             </div>
 }
 
 const nums = [
     {
         id: 1,
-        text: 'S 3.5 m2',
+        text: 'S 3.5 m',
         name: 'Бокс',
         description: 'Малый бокс для хранения мелкогабаритных вещей. В нем можно хранить сезонную резину, документацию, разборную мебель, коляски и зимний инвентарь.',
         price: 'от 350 000 узс./месяц'
     },
     {
         id: 2,
-        text: 'M 7 m2',
+        text: 'M 7 m',
         name: 'Бокс',
         description: 'Малый бокс для хранения мелкогабаритных вещей. В нем можно хранить сезонную резину, документацию, разборную мебель, коляски и зимний инвентарь.',
         price: 'от 350 000 узс./месяц'
     },
     {
         id: 3,
-        text: 'L 15 m2',
+        text: 'L 15 m',
          name: 'Бокс',
         description: 'Малый бокс для хранения мелкогабаритных вещей. В нем можно хранить сезонную резину, документацию, разборную мебель, коляски и зимний инвентарь.',
         price: 'от 350 000 узс./месяц'
     },
     {
         id: 4,
-        text: 'XL 30 m2',
+        text: 'XL 30 m',
          name: 'Бокс',
         description: 'Малый бокс для хранения мелкогабаритных вещей. В нем можно хранить сезонную резину, документацию, разборную мебель, коляски и зимний инвентарь.',
         price: 'от 350 000 узс./месяц'
@@ -86,25 +86,25 @@ const BoxSize: FC = ({  }) => {
                             {
                                 (tab === 1) ?
                                     <>
-                                    <div> <h4>{nums[0].name} </h4> {nums[0].text} </div>
+                                    <div> <h4>{nums[0].name} </h4> {nums[0].text} <sup>2</sup> </div>
                                         <p>{nums[0].description}</p>
                                         <h6>{nums[0].price}</h6>
                                     </>
                                     : (tab === 2) ?
                                     <>
-                                <div> <h4>{nums[1].name} </h4> {nums[1].text} </div>
+                                <div> <h4>{nums[1].name} </h4> {nums[1].text} <sup>2</sup> </div>
                                 <p>{nums[1].description}</p>
                                 <h6>{nums[1].price}</h6>
                                 </>
                                         : (tab === 3) ?
                                             <>
-                                                <div> <h4>{nums[2].name} </h4> {nums[2].text} </div>
+                                                <div> <h4>{nums[2].name} </h4> {nums[2].text} <sup>2</sup> </div>
                                                 <p>{nums[2].description}</p>
                                                 <h6>{nums[2].price}</h6>
                                             </>
                                             : (tab === 4) ?
                                                 <>
-                                                    <div> <h4>{nums[3].name} </h4> {nums[3].text} </div>
+                                                    <div> <h4>{nums[3].name} </h4> {nums[3].text} <sup>2</sup> </div>
                                                     <p>{nums[3].description}</p>
                                                     <h6>{nums[3].price}</h6>
                                                 </> :
