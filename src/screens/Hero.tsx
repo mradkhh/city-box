@@ -57,7 +57,7 @@ const Hero: FC = () => {
                         </div>
                         <div className="hero__right">
                             <p>Мы поможем сопроводить сделку на покупку складов, от момента просмотра до получения ключей и полного пакета документов</p>
-                            <button className="btn" type="button">Выбрать склад</button>
+                            <a href="#warehouse" className="btn" type="button">Выбрать склад</a>
                         </div>
                     </div>
                 </div>

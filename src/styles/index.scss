@@ -55,12 +55,14 @@
   text-align: center;
 
   &-list {
-    > li {
+    li {
+      margin-bottom: 28px;
+    }
+    a {
       font-weight: 500;
       font-size: 36px;
       line-height: 44px;
       color: var(--white);
-      margin-bottom: 28px;
       cursor: pointer;
 
       &:hover {
@@ -242,7 +244,7 @@
       }
     }
 
-    > button {
+    > a {
       margin-bottom: 32px;
     }
   }
@@ -256,6 +258,10 @@
 
   @include breakpoint-max-768 {
     inset: auto auto 200px auto;
+  }
+
+  @include breakpoint-max-480 {
+    inset: auto auto 230px auto;
   }
 }
 

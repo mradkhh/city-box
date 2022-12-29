@@ -91,9 +91,8 @@ const Warehouse: FC<WarehouseProps> = ({  }) => {
         return item.id === selectWarehouse
     })
 
-
     function handleChange() {
-        console.log('change')
+        return
     }
 
     const defaultState = {

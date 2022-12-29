@@ -76,6 +76,10 @@ h2 {
         bottom: 190px;
       }
 
+      @include breakpoint-max-480 {
+        bottom: 220px;
+      }
+
       &-bullet {
         @include flex-center;
         @include makeRectangle(8);

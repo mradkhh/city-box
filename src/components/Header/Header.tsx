@@ -57,11 +57,31 @@ const isFreeDay = ( date.getHours() < 17 ) && (date.getHours() >= 8)
                 <span  onClick={handleCancel} className="ant-modal-close-btn"> <CloseIcon/> </span>
                 <nav className="menu-nav">
                     <ul className="menu-nav-list">
-                        <li>Услуги</li>
-                        <li>Адреса складов</li>
-                        <li>Оплата</li>
-                        <li>Цены</li>
-                        <li>Контакты</li>
+                        <li onClick={handleCancel} >
+                            <Link href="#process__work">
+                                <a>Услуги</a>
+                            </Link>
+                        </li>
+                        <li onClick={handleCancel} >
+                            <Link href="#warehouse">
+                                <a>Адреса складов</a>
+                            </Link>
+                        </li>
+                        <li onClick={handleCancel} >
+                            <Link href="#contactus">
+                                <a>Оплата</a>
+                            </Link>
+                        </li>
+                        <li onClick={handleCancel} >
+                            <Link href="#boxsize">
+                                <a>Цены</a>
+                            </Link>
+                        </li>
+                        <li onClick={handleCancel} >
+                            <Link href="#contactus">
+                                <a>Контакты</a>
+                            </Link>
+                        </li>
                     </ul>
                 </nav>
             </Modal>
