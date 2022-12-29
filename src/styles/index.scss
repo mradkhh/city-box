@@ -81,7 +81,7 @@
   background-color: transparent;
   position: fixed;
   inset: 0 0 auto 0;
-  z-index: 1234567;
+  z-index: 123;
 }
 
 .header {
@@ -253,6 +253,10 @@
   inset: auto auto 110px auto;
   width: 100%;
   z-index: 12;
+
+  @include breakpoint-max-768 {
+    inset: auto auto 200px auto;
+  }
 }
 
 .hero__image {
