@@ -8,7 +8,7 @@ const Hero: FC = () => {
 
 
     const pagination = {
-        clickable: true,
+        clickable: false,
         dynamicBullets: true,
     };
 

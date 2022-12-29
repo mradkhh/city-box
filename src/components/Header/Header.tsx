@@ -1,14 +1,15 @@
 import React, {FC, useEffect, useState} from 'react';
 import Link from "next/link";
-import { Button, Modal } from 'antd';
+import { Modal } from 'antd';
+import styles from './Header.module.scss'
 import {BrandLogo, BurgerIcon, CloseIcon, InstagramIcon, PhoneIcon, TelegramIcon} from "static/icons/icon";
 
 
 const Header: FC = ({  }) => {
 
-    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+    const [ isOpenSocially, setIsOpenSocially ] = useState<boolean>(true)
 
-// @ts-ignore
 const date = new Date()
 const isWeekend = (date.getDay() === 6) || (date.getDay()  === 0);
 const isFreeDay = ( date.getHours() < 17 ) && (date.getHours() >= 8)
@@ -23,27 +24,31 @@ const isFreeDay = ( date.getHours() < 17 ) && (date.getHours() >= 8)
         setIsModalOpen(false);
     };
 
-    // =----------- HEADER background effect ------------------=
     useEffect(() => {
-        const header = document.getElementById('header');
+    // =----------- HEADER background effect ------------------=
+        const header: any = document.getElementById('header');
         window.addEventListener('scroll', function(e) {
-
-            let scroll = this.scrollY;
+            let scroll: number = window.scrollY;
             if(scroll > 60) {
-                // @ts-ignore
                 header.style.backgroundColor = 'var(--menu-blur)';
-                // @ts-ignore
                 header.style.backdropFilter = 'blur(8px)';
                 return;
             } else if (scroll < 30) {
-                // @ts-ignore
                 header.style.backgroundColor = 'transparent';
-                // @ts-ignore
                 header.style.backdropFilter = 'none';
                 return;
             }
-
         });
+
+        let oldScrollY: number = window.scrollY;
+        window.onscroll = function(e) {
+            if(oldScrollY < window.scrollY){
+                setIsOpenSocially(false)
+            } else {
+                setIsOpenSocially(true)
+            }
+            oldScrollY = window.scrollY;
+        }
     }, [])
 
     return (
@@ -66,7 +71,7 @@ const isFreeDay = ( date.getHours() < 17 ) && (date.getHours() >= 8)
                         <a><BrandLogo/></a>
                     </Link>
                     <div className={'header__left'}>
-                        <div className="header-socially">
+                        <div className={isOpenSocially ? "header-socially header-socially-open" : "header-socially header-socially-close"}>
                             <Link href={'/'}>
                                 <a><InstagramIcon/></a>
                             </Link>

@@ -81,7 +81,7 @@
   background-color: transparent;
   position: fixed;
   inset: 0 0 auto 0;
-  z-index: 123;
+  z-index: 1234567;
 }
 
 .header {
@@ -101,15 +101,27 @@
       top: 100px;
       right: 20px;
       flex-direction: column;
+
+      &-open {
+        right: 20px;
+        transition: right 300ms ease-in-out;
+      }
+
+      &-close {
+        right: -100px;
+        transition: right 300ms ease-in-out;
+      }
     }
 
     @include breakpoint-max-568 {
-      right: 16px;
+      &-open {
+        right: 16px;
+      }
     }
 
     > a {
       @include flex-center;
-      padding: 12px;
+      @include makeRectangle(48);
       background-color: var(--white);
       border-radius: 100%;
       border: 1px solid var(--gray-300);
