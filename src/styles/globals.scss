@@ -268,26 +268,3 @@ $breakpoint480: 479.98 + px;
 .text-center {
   text-align: center;
 }
-
-// =----------- YANDEX MAPS STYLES -------------=
-
-
-// =----------- ANIMATIONS ----------=
-
-@keyframes move-left-to-right {
-  0% {
-    left: -500px;
-  }
-  100% {
-    left: 24px;
-  }
-}
-
-@keyframes move-right-to-left {
-  0% {
-    left: 24px;
-  }
-  100% {
-    left: -500px;
-  }
-}

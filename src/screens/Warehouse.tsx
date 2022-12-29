@@ -141,7 +141,7 @@ const Warehouse: FC<WarehouseProps> = ({  }) => {
                                 }
                             </Map>
                         </YMaps>
-                        <div style={{ left: cardInfo ? '24px' : '-500px' }} className="warehouse__info">
+                        <div style={{ display: cardInfo ? 'block' : 'none' }} className="warehouse__info">
                             <MapCard
                                 setCardInfo={setCardInfo}
                                 info={currentWarehouse}

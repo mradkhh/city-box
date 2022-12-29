@@ -11,6 +11,7 @@ function FaqCard({ data }: any) {
         } else {
             setOpen(true)
             element.current.style.maxHeight = element.current.scrollHeight + "px";
+
         }
     }
     return (

@@ -23,13 +23,21 @@
     background-color: var(--gray-blur-200);
     z-index: 12;
     cursor: pointer;
+
+    @include breakpoint-max-768 {
+      display: none;
+    }
   }
 }
 
 .body {
-  padding: 24px;
+  padding: 24px 24px 0 24px;
 
-  > p {
+  @include breakpoint-max-768 {
+    padding-top: 16px;
+  }
+
+   p {
     font-weight: 500;
     font-size: 16px;
     line-height: 150%;
@@ -42,14 +50,24 @@
     @include line-clamp-vertical(3);
   }
 
-  > button {
+   button {
     width: 100%;
+     margin-bottom: 24px;
   }
 }
 
 .body_top {
   @include flex-between(center);
   margin-bottom: 30px;
+  position: relative;
+
+  @include breakpoint-max-768 {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-right: auto;
+    margin-bottom: 22px;
+  }
 
   > h2 {
     font-weight: 600;
@@ -72,19 +90,49 @@
 
     @include breakpoint-max-768 {
       font-size: 13px;
+      max-width: 100% !important;
+      justify-content: flex-start;
+    }
+
+    @include breakpoint-max-480 {
+      margin-right: auto;
+      justify-content: flex-start;
     }
 
     > span {
       border-radius: 100%;
       background-color: var(--gray-300);
       @include flex-center;
-      padding: 10px;
+      @include makeRectangle(40);
+
+      @include breakpoint-max-768 {
+        display: none;
+      }
     }
+  }
+}
+
+
+.arrow_down {
+  @include flex-center;
+  @include makeRectangle(40);
+  border-radius: 100vmax;
+  background-color: var(--orange-200);
+  cursor: pointer;
+  position: absolute;
+  top: 6px;
+  right: 0;
+  z-index: 12;
+
+  @include breakpoint-min-768 {
+    display: none;
   }
 }
 
 .body__middle {
   margin-bottom: 27px;
+  transition: all 300ms ease-in-out;
+  overflow: hidden;
   > ul {
     @include grid(2, 2, 2, 2, 1);
 
@@ -108,4 +156,14 @@
       }
     }
   }
+}
+
+.open {
+  transition: all 300ms ease-in-out;
+  transform: rotate(180deg);
+}
+
+.close {
+  transition: all 300ms ease-in-out;
+  transform: rotate(0);
 }
