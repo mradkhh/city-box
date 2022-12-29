@@ -181,8 +181,8 @@ h2 {
 
 
 
-.btn {
-  background-color: var(--orange-500);
+.btn, a.btn, button.btn {
+  background-color: var(--orange-500) !important;
   color: var(--white);
   border-radius: 8px;
   padding: 20px 30px;
